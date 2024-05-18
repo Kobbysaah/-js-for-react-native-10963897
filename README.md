@@ -1,6 +1,6 @@
 # -js-for-react-native-10963897
 # Mobile Application Development Assignment 1
-###Task 1
+### Task 1
   - Takes an array of numbers and returns a new array where even numbers are squared and odd numbers are tripled.
 
 ### Task 2
