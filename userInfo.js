@@ -1,39 +1,14 @@
-// Importing the formatArrayStrings function
-const { formatArrayStrings } = require('./yourOtherFile');
-
-// Function to create user profiles
-function createUserProfiles(namesArray, modifiedNamesArray) {
-    // Check if the arrays have the same length
-    if (namesArray.length !== modifiedNamesArray.length) {
-        console.error("Arrays must have the same length.");
-        return;
-    }
-
-    // Initialize an array to store user profiles
-    var userProfiles = [];
-
-    // Auto-incremented id starting from 1
-    var idCounter = 1;
-
-    // Loop through each name and its corresponding modified name
-    for (var i = 0; i < namesArray.length; i++) {
-        var originalName = namesArray[i];
-        var modifiedName = modifiedNamesArray[i];
-
-        // Create a user profile object with originalName, modifiedName, and id
-        var userProfile = {
-            originalName: originalName,
-            modifiedName: modifiedName,
-            id: idCounter++
+function createUserProfiles(originalNames, modifiedNames) {
+    return originalNames.map((name, index) => {
+        return {
+            id: index + 1,
+            originalName: name,
+            modifiedName: modifiedNames[index],
         };
-
-        // Push the user profile object into the array
-        userProfiles.push(userProfile);
-    }
-
-    // Return the array of user profiles
-    return userProfiles;
+    });
 }
-
-// Exporting the createUserProfiles function
-module.exports = { createUserProfiles };
+//example usage
+const originalNames = ["Alice", "Bob", "Charlie", "David", "Eve","able"];
+const modifiedNames = formattedStrings;
+const userProfiles = createUserProfiles(originalNames, modifiedNames);
+console.log(userProfiles);
